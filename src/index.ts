@@ -60,9 +60,6 @@ server.get("/drivers", () => users);
 
 server.get("/drivers/:user", (context) => {
     let foundUser = users.find((user) => user.type == context.params.user)
-    let foundExperienccedUsers = users.filter((user) => {
-        return user.experienceyears >= 10;
-    });
     return foundUser || "User not found";
 })
 
